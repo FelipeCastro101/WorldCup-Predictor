@@ -3,7 +3,7 @@ name = "backend"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "fastapi>=0.128.8",
     "lightgbm>=4.6.0",
@@ -16,16 +16,9 @@ dependencies = [
     "xgboost>=2.1.4",
 ]
 
-[project.scripts]
-backend = "backend:main"
-
 [build-system]
-requires = ["uv_build>=0.11.26,<0.12.0"]
-build-backend = "uv_build"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[dependency-groups]
-dev = [
-    "jupyter>=1.1.1",
-    "pytest>=8.4.2",
-    "ruff>=0.15.20",
-]
+[tool.hatch.build.targets.wheel]
+packages = ["src/worldcup"]
