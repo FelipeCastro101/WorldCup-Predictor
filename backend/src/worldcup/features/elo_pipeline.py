@@ -51,7 +51,7 @@ def compute_elo_history(csv_path: str) -> pd.DataFrame:
         new_rating_a, new_rating_b = update_elo(
             rating_a, rating_b, actual_score_a, played_a, played_b, goal_diff
         )
-        
+
         records.append({
             "match_id": match.match_id,
             "date": match.date,
@@ -61,6 +61,7 @@ def compute_elo_history(csv_path: str) -> pd.DataFrame:
             "team_b_elo_before": rating_b,
             "team_a_elo_after": new_rating_a,
             "team_b_elo_after": new_rating_b,
+            "actual_score_a": actual_score_a,
         })
 
         # update state for next time we see these teams
