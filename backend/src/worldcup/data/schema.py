@@ -47,3 +47,6 @@ class TournamentEntry(BaseModel):
     tournament_id: str
     team_id: str
     group: str
+
+class playerSkill(BaseModel):
+    name_id: str
